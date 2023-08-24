@@ -43,3 +43,24 @@ button {
   border-radius: 0.2rem;
   margin-top: 0.8rem;
 }
+
+.hyperlink {
+  color: #50716b;
+  text-decoration: solid;
+}
+
+/* product page */
+.shop-cart-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.shop-div {
+  margin-right: 6rem;
+} 
+
+.cart-icon {
+  margin-right: 1rem;
+}

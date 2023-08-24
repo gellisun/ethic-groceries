@@ -6,6 +6,7 @@ import NewOrderPage from "../NewOrderPage/NewOrderPage";
 import OrderHistoryPage from "../OrderHistoryPage/OrderHistoryPage";
 import { Routes, Route } from "react-router-dom";
 import NavBar from "../../components/NavBar/NavBar";
+import NavBarLoggedOut from "../../components/NavBar/NavBarLoggedOut";
 import { getUser } from '../../utilities/users-service';
 
 export default function App() {
@@ -22,7 +23,10 @@ export default function App() {
       <NavBar user={user} setUser={setUser}/>
       </>
       : 
+      <>
       <HomePage setUser={setUser}/>
+      <NavBarLoggedOut user={user} setUser={setUser}/>
+      </>
       }
     </main>
   );
