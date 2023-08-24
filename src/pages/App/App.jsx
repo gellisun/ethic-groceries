@@ -1,6 +1,7 @@
 import "./App.css";
 import { useState } from "react";
-import AuthPage from "../AuthPage/AuthPage";
+import HomePage from "../HomePage/HomePage";
+import ProductPage from "../ProductPage/ProductPage";
 import NewOrderPage from "../NewOrderPage/NewOrderPage";
 import OrderHistoryPage from "../OrderHistoryPage/OrderHistoryPage";
 import { Routes, Route } from "react-router-dom";
@@ -13,14 +14,15 @@ export default function App() {
     <main className="App">
       {user ? 
       <>
-      <NavBar user={user} setUser={setUser}/>
       <Routes>
+        <Route path="/" element={<ProductPage user={user} />} />
         <Route path="/orders/new" element={<NewOrderPage />} />
-        <Route path="/orders" element={<OrderHistoryPage />} />"
+        <Route path="/orders" element={<OrderHistoryPage />} />
       </Routes> 
+      <NavBar user={user} setUser={setUser}/>
       </>
       : 
-      <AuthPage setUser={setUser}/>
+      <HomePage setUser={setUser}/>
       }
     </main>
   );
