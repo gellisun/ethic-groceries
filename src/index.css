@@ -6,8 +6,6 @@ body {
   font-family: 'Quicksand', sans-serif;
 }
 
-
-/* HomePage */
 .app-logo {
   max-width: 100%;
 }
@@ -63,4 +61,16 @@ button {
 
 .cart-icon {
   margin-right: 1rem;
+}
+
+.grocery-item-img {
+  width: 6rem;
+}
+
+.CategoryList {
+  list-style-type: none;
+}
+
+.cat-item {
+  display: inline;
 }
