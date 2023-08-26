@@ -39,9 +39,6 @@ const Product = require('./models/product');
     {name: 'Beer', image: 'https://picsum.photos/200', category: categories[4], price: 13.95},
     {name: 'Wine', image: 'https://picsum.photos/200', category: categories[4], price: 17.95},
   ]);
-
-  console.log(products);
-
   process.exit();
 
 })();

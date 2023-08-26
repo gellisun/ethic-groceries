@@ -24,6 +24,7 @@ app.use(require('./config/check-token'));
 // Put API routes here, before the "catch all" route
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/products', require('./routes/api/products'));
+app.use('/api/orders', require('./routes/api/orders'));
 
 // The following "catch all" route (note the *) is necessary
 // to return the index.html on all non-AJAX requests

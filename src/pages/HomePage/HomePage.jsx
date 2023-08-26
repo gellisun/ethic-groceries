@@ -11,13 +11,14 @@ import { PiBeerBottleBold } from "react-icons/pi";
 export default function HomePage({ setUser }) {
   const [showSignUp, setShowSignUp] = useState(false);
   return (
-    <main>
+    <main className={window.innerWidth > 768 ? "wide-screen" : "small-screen"}>
       <img src="/images/app-name.png" alt="app logo" className="app-logo" />
       <img
         src="../../../images/homepage-photo.jpeg"
         alt="nature"
         className="homepage-photo"
       />
+      <div className="about-us-hp">
       <h3>
         "Our lives begin to end the day we become silent about the things that
         really matter."
@@ -29,6 +30,8 @@ export default function HomePage({ setUser }) {
         the opportunity to shop consciously.
       </p>
       <h4>Our partnerships:</h4>
+      </div>
+      <div className="partnerships-hp">
       <PiAnchorSimpleBold size="3rem" color="#50716b" />
       &nbsp;
       <PiArmchairBold size="3rem" color="#50716b" />
@@ -41,14 +44,18 @@ export default function HomePage({ setUser }) {
       &nbsp;
       <PiBeerBottleBold size="3rem" color="#50716b" />
       <br />
-      <button onClick={() => setShowSignUp(!showSignUp)}>
+      </div>
+      <div className="form-container">
+      <button className="logging-options" onClick={() => setShowSignUp(!showSignUp)}>
         {showSignUp ? "Log In" : "Sign Up"}
       </button>
       {showSignUp ? (
         <SignUpForm setUser={setUser} />
       ) : (
         <LoginForm setUser={setUser} />
+        
       )}
+      </div>
     </main>
   );
 }

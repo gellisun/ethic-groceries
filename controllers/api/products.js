@@ -11,7 +11,6 @@ async function index(req, res) {
       .populate("category")
       .exec();
     products.sort((a, b) => a.category.sortOrder - b.category.sortOrder);
-    console.log(products)
     res.json(products);
   } catch (err) {
     res.status(500).json(err);

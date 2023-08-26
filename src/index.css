@@ -56,7 +56,7 @@ button {
 }
 
 .shop-div {
-  margin-right: 6rem;
+  margin-right: 6.5rem;
 } 
 
 .cart-icon {
@@ -72,5 +72,102 @@ button {
 }
 
 .cat-item {
-  display: inline;
+  display: inline-block;
+}
+
+.product-price {
+  margin: 0.5rem;
+}
+
+.add-product-btn{
+    margin-left: 0.5rem;
+}
+
+@media only screen and (min-width: 768px) {
+  *, *:before, *:after {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Quicksand', sans-serif;
+  }
+  
+  .app-logo {
+    width: 30%;
+    float: right;
+  }
+  
+  .homepage-photo {
+    max-width: 100%;
+    margin-top: 2rem;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem;
+  }
+  
+  label {
+    margin-top: 0.5rem;
+  }
+  
+  input {
+    border: 0.1rem solid lightgrey;
+    border-style: outset;
+    padding: 0.3rem;
+    margin-top: 0.5rem;
+  }
+  
+  button {
+    font-family: 'Quicksand', sans-serif;
+    border: none;
+    color: white;
+    background-color: #e3a0ad;
+    padding: 0.5rem;
+    border-radius: 0.2rem;
+    margin-top: 0.8rem;
+  }
+  
+  .hyperlink {
+    color: #50716b;
+    text-decoration: solid;
+  }
+  
+  /* product page */
+  .shop-cart-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  
+  .shop-div {
+    margin-right: 6.5rem;
+  } 
+  
+  .cart-icon {
+    margin-right: 1rem;
+  }
+  
+  .grocery-item-img {
+    width: 6rem;
+  }
+  
+  .CategoryList {
+    list-style-type: none;
+  }
+  
+  .cat-item {
+    display: inline-block;
+  }
+  
+  .product-price {
+    margin: 0.5rem;
+  }
+  
+  .add-product-btn{
+      margin-left: 0.5rem;
+  }
 }

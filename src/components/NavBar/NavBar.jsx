@@ -9,7 +9,7 @@ export default function NavBar({user, setUser}) {
     setUser(null);
   }
   return (
-    <nav>
+    <nav className="navbar-container">
       <>
         <Link className="hyperlink" to="/orders">Order History</Link>
         &nbsp; | &nbsp;

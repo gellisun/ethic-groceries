@@ -8,7 +8,6 @@ import { Routes, Route } from "react-router-dom";
 import NavBar from "../../components/NavBar/NavBar";
 import NavBarLoggedOut from "../../components/NavBar/NavBarLoggedOut";
 import { getUser } from '../../utilities/users-service';
-import { set } from "mongoose";
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -17,7 +16,7 @@ export default function App() {
       {user ? 
       <>
       <Routes>
-        <Route path="/" element={<ProductPage user={user} setUser={setUser} />} />
+        <Route path="/products" element={<ProductPage user={user} setUser={setUser} />} />
         <Route path="/orders/new" element={<OrderPage />} />
         <Route path="/orders" element={<OrderHistoryPage />} />
       </Routes> 
@@ -25,7 +24,9 @@ export default function App() {
       </>
       : 
       <>
-      <HomePage setUser={setUser}/>
+      <Routes>
+        <Route path="/" element={<HomePage user={user} setUser={setUser} />} />
+      </Routes>
       <NavBarLoggedOut user={user} setUser={setUser}/>
       </>
       }

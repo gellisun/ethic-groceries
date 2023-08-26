@@ -1,7 +1,6 @@
 export default function LineItem({ lineItem, isPaid, handleChangeQty }) {
     return (
       <div className="LineItem">
-        <div>{lineItem.product.image}</div>
         <div>
           <span>{lineItem.product.name}</span>
           <span>{lineItem.product.price.toFixed(2)}</span>
