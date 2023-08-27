@@ -1,13 +1,14 @@
 const Order = require("../../models/order");
 
 module.exports = {
-  createOrder,
-  addToOrder,
+  createCart,
+  addToCart,
   setProductQtyInCart,
   checkout,
+  getOrder
 };
 
-async function createOrder(req, res) {
+async function createCart(req, res) {
   try {
     const cart = await Order.getCart(req.user._id);
     res.json(cart);
@@ -16,7 +17,7 @@ async function createOrder(req, res) {
   }
 }
 
-async function addToOrder(req, res) {
+async function addToCart(req, res) {
   try {
     const cart = await Order.getCart(req.user._id);
     await cart.addProductToCart(req.params.id);
@@ -36,6 +37,22 @@ async function setProductQtyInCart(req, res) {
   }
 }
 
+async function getOrder(req, res) {
+  try {
+    const orderId = req.params.id;
+    const order = await Order.findById(orderId).populate('user').populate('lineItems.product').exec();
+    if (!order) {
+      return res.status(404().json({error: 'Order not found'}));
+    }
+    if (!order.user._id.equals(req.user._id)) {
+      return res.status(400).json({error: 'Access denied'});
+    }
+    res.json(order);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+}
+
 async function checkout(req, res) {
   try {
     const cart = await Order.getCart(req.user._id);
@@ -46,3 +63,4 @@ async function checkout(req, res) {
     res.status(500).json(err);
   }
 }
+

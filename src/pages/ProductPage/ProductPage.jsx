@@ -6,10 +6,9 @@ import * as ordersAPI from "../../utilities/orders-api";
 import CategoryList from "../../components/CategoryList/CategoryList";
 import ProductList from "../../components/ProductList/ProductList";
 
-export default function ProductPage({ user, setUser }) {
+export default function ProductPage({ user, setUser, order, setOrder }) {
   const [listedProducts, setListedProducts] = useState([]);
   const [activeCat, setActiveCat] = useState("");
-  const [cart, setCart] = useState([]);
   const categoriesRef = useRef([]);
 
   useEffect(function () {
@@ -23,19 +22,19 @@ export default function ProductPage({ user, setUser }) {
     }
     getProducts();
     async function fetchCart() {
-      const cart = await ordersAPI.getCart();
-      setCart(cart.lineItems.map((lineItem) => lineItem.product._id));
+      const order = await ordersAPI.getCart();
+      setOrder(order);
     }
     fetchCart();
-  }, []);
+  }, [setOrder]);
 
   /*--- Event Handlers --- */
   async function handleAddToOrder(productId) {
     try {
-      const newCart = await ordersAPI.addProductToCart(productId);
-      setCart(newCart.lineItems);      
+      const newOrder = await ordersAPI.addProductToCart(productId);
+      setOrder(newOrder.lineItems);      
     } catch (err) {
-      console.log(err)
+      console.log(err);
     }
   }
 
@@ -47,13 +46,13 @@ export default function ProductPage({ user, setUser }) {
         <div className="shop-div">
           <h1>SHOP</h1>
         </div>
-        <Link to="/orders/new" />
-        {cart.length > 0 ? (
-          <RiShoppingCartFill className="cart-icon" size="2rem" color="#50716b" />
+        <Link to="/orders/new">
+          {order.length > 0 ? (
+            <RiShoppingCartFill className="cart-icon" size="2rem" color="#50716b" />
           ) : (
             <RiShoppingCartLine className="cart-icon" size="2rem" color="#50716b" />
           )}
-        <Link />
+        </Link>
       </div>
       <CategoryList
         categories={categoriesRef.current}
