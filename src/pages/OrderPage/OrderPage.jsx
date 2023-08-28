@@ -10,7 +10,7 @@ export default function OrderPage({ order, setOrder }) {
         productId,
         newQty
       );
-      setOrder(updatedOrder.lineItems);
+      setOrder(updatedOrder);
     } catch (err) {
       console.log(err);
     }
@@ -18,7 +18,7 @@ export default function OrderPage({ order, setOrder }) {
   async function handleCheckout() {
     console.log('hello')
   }
-  console.trace()
+
   const lineItems = order.lineItems.map((lineItem) => (
     <LineItem
       lineItem={lineItem}
