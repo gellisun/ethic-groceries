@@ -18,7 +18,7 @@ export default function App() {
       <>
       <Routes>
         <Route path="/products" element={<ProductPage user={user} setUser={setUser} order={order} setOrder={setOrder}  />} />
-        <Route path="/orders/new" element={<OrderPage order={order} setOrer={setOrder} />} />
+        <Route path="/orders/new" element={<OrderPage order={order} setOrder={setOrder} />} />
       </Routes> 
       <NavBar user={user} setUser={setUser}/>
       </>

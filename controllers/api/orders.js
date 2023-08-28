@@ -30,7 +30,7 @@ async function addToCart(req, res) {
 async function setProductQtyInCart(req, res) {
   try {
     const cart = await Order.getCart(req.user._id);
-    await cart.setProductQty(req.body.itemId, req.body.newQty);
+    await cart.setProductQty(req.body.orderId, req.body.productId, req.body.newQty);
     res.json(cart);
   } catch (err) {
     res.status(500).json(err);

@@ -83,6 +83,23 @@ button {
     margin-left: 0.5rem;
 }
 
+/* order page */
+
+.LineItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product {
+  display: flex;
+}
+
+.qty-btn {
+  padding: 0.2rem;
+  margin: 0.2rem;
+}
+
 @media only screen and (min-width: 768px) {
   *, *:before, *:after {
     box-sizing: border-box;
