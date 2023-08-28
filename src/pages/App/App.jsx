@@ -7,6 +7,7 @@ import { Routes, Route } from "react-router-dom";
 import NavBar from "../../components/NavBar/NavBar";
 import NavBarLoggedOut from "../../components/NavBar/NavBarLoggedOut";
 import { getUser } from '../../utilities/users-service';
+import OrderHistoryPage from "../OrderHistoryPage/OrderHistoryPage";
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -19,6 +20,7 @@ export default function App() {
       <Routes>
         <Route path="/products" element={<ProductPage user={user} setUser={setUser} order={order} setOrder={setOrder}  />} />
         <Route path="/orders/new" element={<OrderPage order={order} setOrder={setOrder} />} />
+        <Route path="/orders" element={<OrderHistoryPage order={order} setOrder={setOrder} />} />
       </Routes> 
       <NavBar user={user} setUser={setUser}/>
       </>

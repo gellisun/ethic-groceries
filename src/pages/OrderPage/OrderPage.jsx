@@ -1,7 +1,9 @@
 import LineItem from "../../components/LineItem/LineItem";
 import * as ordersAPI from "../../utilities/orders-api";
+import { useNavigate } from "react-router-dom";
 
 export default function OrderPage({ order, setOrder }) {
+  const navigate = useNavigate();
 
   async function handleChangeQty(orderId, productId, newQty) {
     try {
@@ -16,17 +18,22 @@ export default function OrderPage({ order, setOrder }) {
     }
   }
   async function handleCheckout() {
-    console.log('hello')
+    try {
+      await ordersAPI.checkout();
+      setOrder({...order, isPaid: true, lineItems: []});
+      navigate('/orders');
+    } catch (err) {
+      console.error(err);
+    }
   }
-
-  const lineItems = order.lineItems.map((lineItem) => (
+  const lineItems = order.lineItems.map((item) => (
     <LineItem
-      lineItem={lineItem}
+      lineItem={item}
       isPaid={order.isPaid}
       handleChangeQty={handleChangeQty}
       order={order}
       setOrder={setOrder}
-      key={lineItem._id}
+      key={item._id}
     />
   ));
   

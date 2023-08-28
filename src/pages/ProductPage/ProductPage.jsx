@@ -36,7 +36,7 @@ export default function ProductPage({ user, setUser, order, setOrder }) {
       }
       fetchCart();
     },
-    [order, setOrder]
+    [setOrder]
   );
 
   /*--- Event Handlers --- */
@@ -57,7 +57,7 @@ export default function ProductPage({ user, setUser, order, setOrder }) {
           <h1>SHOP</h1>
         </div>
         <Link to="/orders/new">
-          {order ? (
+          {order.length > 0 ? (
             <RiShoppingCartFill
               className="cart-icon"
               size="2rem"

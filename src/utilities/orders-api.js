@@ -21,3 +21,7 @@ export function getOrder(orderId) {
 export function checkout() {
   return sendRequest(`${BASE_URL}/checkout`, 'POST');
 }
+
+export function getPaidOrders() {
+  return sendRequest(`${BASE_URL}`);
+}

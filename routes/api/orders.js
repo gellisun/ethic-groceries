@@ -8,5 +8,6 @@ router.post('/product/:id', ordersCtrl.addToCart);
 router.post('/checkout', ensureLoggedIn, ordersCtrl.checkout);
 router.put('/qty', ordersCtrl.setProductQtyInCart);
 router.get('/:id', ensureLoggedIn, ordersCtrl.getOrder);
+router.get('/', ensureLoggedIn, ordersCtrl.getPaidOrders)
 
 module.exports = router;
