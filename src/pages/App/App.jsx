@@ -8,6 +8,8 @@ import NavBar from "../../components/NavBar/NavBar";
 import NavBarLoggedOut from "../../components/NavBar/NavBarLoggedOut";
 import { getUser } from '../../utilities/users-service';
 import OrderHistoryPage from "../OrderHistoryPage/OrderHistoryPage";
+import ProductDetailPage from '../../pages/ProductDetailPage/ProductDetailPage';
+import * as productsAPI from "../../utilities/products-api";
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -17,11 +19,15 @@ export default function App() {
     <main className="App">
       {user ? 
       <>
+      
       <Routes>
+        <Route path="/" element={<HomePage />} />
         <Route path="/products" element={<ProductPage user={user} setUser={setUser} order={order} setOrder={setOrder}  />} />
+        <Route path="/products/:id" element={<ProductDetailPage />} />
         <Route path="/orders/new" element={<OrderPage order={order} setOrder={setOrder} />} />
         <Route path="/orders" element={<OrderHistoryPage order={order} setOrder={setOrder} />} />
       </Routes> 
+      
       <NavBar user={user} setUser={setUser}/>
       </>
       : 

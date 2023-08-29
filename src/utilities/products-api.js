@@ -5,6 +5,6 @@ export async function getAll() {
     return sendRequest(BASE_URL);
 }
 
-export async function getById(id) {
-    return sendRequest(`${BASE_URL}${id}`);
+export async function getById(productId) {
+    return sendRequest(`${BASE_URL}/${productId}`);
 }
