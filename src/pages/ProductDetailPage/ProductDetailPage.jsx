@@ -22,13 +22,13 @@ export default function ProductDetailPage() {
       <img src="/images/app-name.png" alt="app logo" className="app-logo" />
       <h1>PRODUCT INFORMATION</h1>
       <div className="ProductDetails">
-        <h2>{product.name}</h2>
-        <span>{product.price}</span>
+        <h3>{product.name}</h3>
         <img
           className="grocery-item-img"
           src={product.image}
           alt="grocery item"
-        />
+        />&nbsp;<span>${product.price}</span>
+        <p>{product.description}</p>
       </div>
     </>
   );

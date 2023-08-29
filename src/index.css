@@ -1,9 +1,12 @@
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
 }
 
 body {
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
+  min-height: 100vh;
 }
 
 .app-logo {
@@ -33,7 +36,7 @@ input {
 }
 
 button {
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   border: none;
   color: white;
   background-color: #e3a0ad;
@@ -43,8 +46,22 @@ button {
 }
 
 .hyperlink {
-  color: #50716b;
+  text-decoration: none;
+}
+
+.nav-link {
+  color: white;
   text-decoration: solid;
+}
+
+nav {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #50716b;
+  color: white;
+  padding: 0.5rem;
 }
 
 /* product page */
@@ -57,57 +74,70 @@ button {
 
 .shop-div {
   margin-right: 6.5rem;
-} 
+}
 
 .cart-icon {
   margin-right: 1rem;
 }
 
 /* order page */
- .checkout-btn {
+.checkout-btn {
   margin-bottom: 3rem;
- }
+}
 
+/* order history page */
+
+.order-history-list {
+  list-style-type: none;
+  text-align: left;
+  padding: 1rem;
+}
+
+.order-history-li {
+  text-decoration: none;
+}
 
 @media only screen and (min-width: 768px) {
-  *, *:before, *:after {
+  *,
+  *:before,
+  *:after {
     box-sizing: border-box;
   }
-  
+
   body {
-    font-family: 'Quicksand', sans-serif;
+    font-family: "Quicksand", sans-serif;
   }
-  
+
   .app-logo {
     width: 30%;
     float: right;
   }
-  
+
   .homepage-photo {
     max-width: 100%;
     margin-top: 2rem;
   }
-  
+
   form {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 2rem;
   }
-  
+
   label {
     margin-top: 0.5rem;
   }
-  
+
   input {
     border: 0.1rem solid lightgrey;
     border-style: outset;
     padding: 0.3rem;
     margin-top: 0.5rem;
   }
-  
+
   button {
-    font-family: 'Quicksand', sans-serif;
+    font-family: "Quicksand", sans-serif;
     border: none;
     color: white;
     background-color: #e3a0ad;
@@ -115,12 +145,22 @@ button {
     border-radius: 0.2rem;
     margin-top: 0.8rem;
   }
-  
-  .hyperlink {
+
+  .product-name {
     color: #50716b;
     text-decoration: solid;
   }
-  
+
+  nav {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #50716b;
+    color: white;
+    padding: 0.5rem;
+  }
+
   /* product page */
   .shop-cart-container {
     text-align: center;

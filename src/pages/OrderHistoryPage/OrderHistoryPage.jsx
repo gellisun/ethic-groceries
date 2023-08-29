@@ -1,5 +1,5 @@
 import * as ordersAPI from "../../utilities/orders-api";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { useEffect } from "react";
 
 export default function OrderHistoryPage({ order, setOrder }) {
@@ -16,20 +16,20 @@ export default function OrderHistoryPage({ order, setOrder }) {
   }, [setOrder]);
 
   return (
-    <div>
+    <>
       <img src="/images/app-name.png" alt="app logo" className="app-logo" />
       <h1>PREVIOUS ORDERS</h1>
       {order.length > 0 ? (
-        <ul>
+        <ul className="order-history-list">
           {order.map((order) => (
-            <li key={order._id}>
-              <Link to={`/orders/${order._id}`}>{order.orderId}</Link>
+            <li className="order-history-li" key={order._id}>{order.orderId}
+              {/* <Link to={`/orders/${order._id}`}>{order.orderId}</Link> */}
             </li>
           ))}
         </ul>
       ) : (
         <p>No previous orders available.</p>
       )}
-    </div>
+    </>
   );
 }

@@ -5,7 +5,7 @@ export default function Product({ listedProduct, handleAddToOrder }) {
   return (
     <>
       <div className="product-container">
-        <Link className="hyperlink" to={`/products/${listedProduct._id}`}>
+        <Link className="product-link hyperlink" to={`/products/${listedProduct._id}`}>
           <img
             className="grocery-item-img"
             src={listedProduct.image}

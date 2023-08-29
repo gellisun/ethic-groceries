@@ -9,19 +9,19 @@ export default function NavBar({ user, setUser }) {
   return (
     <nav className="navbar-container">
       <>
-        <Link className="hyperlink" to="/products">
+        <Link className="hyperlink nav-link" to="/products">
           Shop
         </Link>
         &nbsp; | &nbsp;
-        <Link className="hyperlink" to="/orders/new">
+        <Link className="hyperlink nav-link" to="/orders/new">
           New Order
         </Link>
         &nbsp; | &nbsp;
-        <Link className="hyperlink" to="/orders">
+        <Link className="hyperlink nav-link" to="/orders">
           Order History
         </Link>
         &nbsp; | &nbsp;
-        <Link className="hyperlink" to="" onClick={handleLogOut}>
+        <Link className="hyperlink nav-link" to="" onClick={handleLogOut}>
           Log Out
         </Link>
       </>
