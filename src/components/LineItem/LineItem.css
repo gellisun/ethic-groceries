@@ -1,0 +1,14 @@
+.LineItem-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .product {
+    display: flex;
+  }
+  
+  .qty-btn {
+    padding: 0.2rem;
+    margin: 0.2rem;
+  }

@@ -41,14 +41,14 @@ export default function OrderPage({ order, setOrder }) {
     <div>
       <img src="/images/app-name.png" alt="app logo" className="app-logo" />
       <div>
-        <h1>NEW ORDER</h1>
+        <h1 className="new-order-h1">NEW ORDER</h1>
       </div>
       <div className="cart-container">
         {lineItems.length ? (
           <>
             {lineItems}
             <section>
-              <button onClick={handleCheckout} disabled={!lineItems.length}>
+              <button className="checkout-btn" onClick={handleCheckout} disabled={!lineItems.length}>
                 Checkout
               </button>
               &nbsp;

@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
+import './Product.css';
 
 export default function Product({ listedProduct, handleAddToOrder }) {
   return (
     <>
-      <div className="Product">
-        <Link to={`/products/${listedProduct._id}`}>
+      <div className="product-container">
+        <Link className="hyperlink" to={`/products/${listedProduct._id}`}>
           <img
             className="grocery-item-img"
             src={listedProduct.image}

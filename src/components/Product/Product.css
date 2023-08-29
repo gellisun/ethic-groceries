@@ -1,0 +1,24 @@
+.product-price {
+  margin: 0.5rem;
+}
+
+.add-product-btn {
+  margin-left: 0.5rem;
+}
+
+.grocery-item-img {
+  width: 6rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .product-price {
+    margin: 0.5rem;
+  }
+
+  .add-product-btn {
+    margin-left: 0.5rem;
+  }
+  .grocery-item-img {
+    width: 10rem;
+  }
+}

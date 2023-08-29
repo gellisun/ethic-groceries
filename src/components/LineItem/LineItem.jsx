@@ -1,6 +1,8 @@
+import './LineItem.css';
+
 export default function LineItem({ lineItem, isPaid, handleChangeQty, order, setOrder }) {
     return (
-      <div className="LineItem">
+      <div className="LineItem-container">
         <div className="product">
           <p>{lineItem.product.name}</p>&nbsp;&nbsp;
           <p>${lineItem.product.price.toFixed(2)}</p>

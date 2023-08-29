@@ -63,42 +63,11 @@ button {
   margin-right: 1rem;
 }
 
-.grocery-item-img {
-  width: 6rem;
-}
-
-.CategoryList {
-  list-style-type: none;
-}
-
-.cat-item {
-  display: inline-block;
-}
-
-.product-price {
-  margin: 0.5rem;
-}
-
-.add-product-btn{
-    margin-left: 0.5rem;
-}
-
 /* order page */
+ .checkout-btn {
+  margin-bottom: 3rem;
+ }
 
-.LineItem {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.product {
-  display: flex;
-}
-
-.qty-btn {
-  padding: 0.2rem;
-  margin: 0.2rem;
-}
 
 @media only screen and (min-width: 768px) {
   *, *:before, *:after {
@@ -154,37 +123,7 @@ button {
   
   /* product page */
   .shop-cart-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-end;
-  }
-  
-  .shop-div {
-    margin-right: 6.5rem;
-  } 
-  
-  .cart-icon {
-    margin-right: 1rem;
-  }
-  
-  .grocery-item-img {
-    width: 6rem;
-  }
-  
-  .CategoryList {
-    list-style-type: none;
-  }
-  
-  .cat-item {
-    display: inline-block;
-  }
-  
-  .product-price {
-    margin: 0.5rem;
-  }
-  
-  .add-product-btn{
-      margin-left: 0.5rem;
+    text-align: center;
+    justify-content: center;
   }
 }
