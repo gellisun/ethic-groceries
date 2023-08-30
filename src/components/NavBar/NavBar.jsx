@@ -13,12 +13,12 @@ export default function NavBar({ user, setUser }) {
           Shop
         </Link>
         &nbsp; | &nbsp;
-        <Link className="hyperlink nav-link" to="/orders/new">
-          New Order
-        </Link>
-        &nbsp; | &nbsp;
         <Link className="hyperlink nav-link" to="/orders">
           Order History
+        </Link>
+        &nbsp; | &nbsp;
+        <Link className="hyperlink nav-link" to="/reviews">
+          My Reviews
         </Link>
         &nbsp; | &nbsp;
         <Link className="hyperlink nav-link" to="" onClick={handleLogOut}>

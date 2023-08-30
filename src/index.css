@@ -85,6 +85,10 @@ nav {
   margin-bottom: 3rem;
 }
 
+.order-refs {
+  padding: 1rem;
+}
+
 /* order history page */
 
 .order-history-list {

@@ -48,6 +48,7 @@ async function getOrder(req, res) {
     const order = await Order.findById(orderId)
       .populate("user")
       .populate("lineItems.product")
+      .populate("reviews.user")
       .exec();
     if (!order) {
       return res.status(404().json({ error: "Order not found" }));

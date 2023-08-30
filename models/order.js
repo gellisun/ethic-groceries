@@ -2,6 +2,22 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const productSchema = require("./productSchema");
 
+const reviewSchema = new Schema({
+  content: { type: String, required: true },
+  rating: {
+    type: Number,
+    min: 1,
+    max: 5,
+  },
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+    required: true
+  },
+}, {
+  timestamps: true
+});
+
 const lineItemSchema = new Schema(
   {
     qty: { type: Number, default: 1 },
@@ -22,6 +38,7 @@ const orderSchema = new Schema(
       user: { type: Schema.Types.ObjectId, ref: "User", required: true },
       lineItems: [lineItemSchema],
       isPaid: { type: Boolean, default: false },
+      reviews: [reviewSchema]
     },
     { timestamps: true, toJSON: { virtuals: true } }
   );
