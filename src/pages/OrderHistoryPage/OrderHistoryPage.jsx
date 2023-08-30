@@ -2,7 +2,7 @@ import * as ordersAPI from "../../utilities/orders-api";
 import { useEffect, useState } from "react";
 import ReviewForm from "../../components/ReviewForm/ReviewForm";
 
-export default function OrderHistoryPage({ order, setOrder }) {
+export default function OrderHistoryPage({ user, order, setOrder }) {
   const [showReviewForm, setShowReviewForm] = useState({});
   const [reviewSubmitted, setReviewSubmitted] = useState({});
 
@@ -10,13 +10,14 @@ export default function OrderHistoryPage({ order, setOrder }) {
     async function fetchPaidOrders() {
       try {
         const paidOrders = await ordersAPI.getPaidOrders();
-        setOrder(paidOrders);
+        const userPaidOrders = paidOrders.filter(order => order.user === user._id);
+        setOrder(userPaidOrders);
       } catch (err) {
         console.error(err);
       }
     }
     fetchPaidOrders();
-  }, [setOrder]);
+  }, [user, setOrder]);
 
   function handleReviewAdded(orderId) {
     setShowReviewForm({ ...showReviewForm, [orderId]: false });
