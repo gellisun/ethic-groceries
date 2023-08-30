@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import ReviewForm from "../../components/ReviewForm/ReviewForm";
 
 export default function OrderHistoryPage({ user, order, setOrder }) {
+  const [pastOrders, setPastOrders] = useState([]);
   const [showReviewForm, setShowReviewForm] = useState({});
   const [reviewSubmitted, setReviewSubmitted] = useState({});
 
@@ -10,10 +11,7 @@ export default function OrderHistoryPage({ user, order, setOrder }) {
     async function fetchPaidOrders() {
       try {
         const paidOrders = await ordersAPI.getPaidOrders();
-        const userPaidOrders = paidOrders.filter(
-          (order) => order.user === user._id
-        );
-        setOrder(userPaidOrders);
+        setPastOrders(paidOrders);
       } catch (err) {
         console.error(err);
       }
@@ -30,9 +28,9 @@ export default function OrderHistoryPage({ user, order, setOrder }) {
     <>
       <img src="/images/app-name.png" alt="app logo" className="app-logo" />
       <h1>PREVIOUS ORDERS</h1>
-      {order.length > 0 ? (
+      {pastOrders.length > 0 ? (
         <ul className="order-history-list">
-          {order.map((order) => (
+          {pastOrders.map((order) => (
             <div className="order-refs" key={order._id}>
               <li className="order-history-li">
                 Order reference: {order.orderId}

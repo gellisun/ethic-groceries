@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import HomePage from "../HomePage/HomePage";
 import ProductPage from "../ProductPage/ProductPage";
 import OrderPage from "../OrderPage/OrderPage";
@@ -9,10 +9,24 @@ import NavBarLoggedOut from "../../components/NavBar/NavBarLoggedOut";
 import { getUser } from '../../utilities/users-service';
 import OrderHistoryPage from "../OrderHistoryPage/OrderHistoryPage";
 import ProductDetailPage from '../../pages/ProductDetailPage/ProductDetailPage';
+import * as ordersAPI from '../../utilities/orders-api';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
-  const [order, setOrder] = useState([]);
+  const [order, setOrder] = useState(null);
+
+  useEffect(() => {
+    async function fetchCart() {
+      try {
+        const order = await ordersAPI.getCart();
+        setOrder(order);
+      } catch (err) {
+        console.error(err);
+      }
+    }
+    fetchCart();
+  }, [])
+  
 
   return (
     <main className="App">
@@ -24,7 +38,7 @@ export default function App() {
         <Route path="/products" element={<ProductPage user={user} setUser={setUser} order={order} setOrder={setOrder}  />} />
         <Route path="/products/:id" element={<ProductDetailPage />} />
         <Route path="/orders/new" element={<OrderPage order={order} setOrder={setOrder} />} />
-        <Route path="/orders" element={<OrderHistoryPage user={user} order={order} setOrder={setOrder} />} />
+        <Route path="/orders" element={<OrderHistoryPage order={order} setOrder={setOrder} />} />
       </Routes> 
       
       <NavBar user={user} setUser={setUser}/>

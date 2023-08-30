@@ -14,13 +14,13 @@ export default function OrderPage({ order, setOrder }) {
       );
       setOrder(updatedOrder);
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
   }
   async function handleCheckout() {
     try {
-      await ordersAPI.checkout();
-      setOrder({...order, isPaid: true, lineItems: []});
+      const checkedOutOrder = await ordersAPI.checkout();
+      setOrder(checkedOutOrder);
       navigate('/orders');
     } catch (err) {
       console.error(err);

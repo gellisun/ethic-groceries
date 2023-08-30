@@ -26,26 +26,18 @@ export default function ProductPage({ user, setUser, order, setOrder }) {
         }
       }
       getProducts();
-      async function fetchCart() {
-        try {
-          const order = await ordersAPI.getCart();
-          setOrder(order);
-        } catch (err) {
-          console.error(err);
-        }
-      }
-      fetchCart();
+
     },
-    [setOrder]
+    []
   );
 
   /*--- Event Handlers --- */
   async function handleAddToOrder(productId) {
     try {
       const newOrder = await ordersAPI.addProductToCart(productId);
-      setOrder(newOrder.lineItems);
+      setOrder(newOrder);
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
   }
   return (
@@ -57,7 +49,7 @@ export default function ProductPage({ user, setUser, order, setOrder }) {
           <h1>SHOP</h1>
         </div>
         <Link to="/orders/new">
-          {order.length > 0 ? (
+          {order && order.lineItems.length > 0 ? (
             <RiShoppingCartFill
               className="cart-icon"
               size="2rem"
