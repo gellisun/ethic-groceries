@@ -10,7 +10,9 @@ export default function OrderHistoryPage({ user, order, setOrder }) {
     async function fetchPaidOrders() {
       try {
         const paidOrders = await ordersAPI.getPaidOrders();
-        const userPaidOrders = paidOrders.filter(order => order.user === user._id);
+        const userPaidOrders = paidOrders.filter(
+          (order) => order.user === user._id
+        );
         setOrder(userPaidOrders);
       } catch (err) {
         console.error(err);
@@ -39,20 +41,26 @@ export default function OrderHistoryPage({ user, order, setOrder }) {
                 Made on {new Date(order.updatedAt).toLocaleDateString()}
               </span>
               &nbsp;&nbsp;
-              {showReviewForm[order._id] && !reviewSubmitted[order._id] ? (
-                <ReviewForm
-                  orderId={order._id}
-                  onReviewAdded={() => handleReviewAdded(order._id)}
-                />
-              ) : (
-                <button
-                  onClick={() =>
-                    setShowReviewForm({ ...showReviewForm, [order._id]: true })
-                  }
-                  disabled={reviewSubmitted[order._id]} 
-                >
-                </button>
-              )}
+              {!reviewSubmitted[order._id] ? (
+                showReviewForm[order._id] ? (
+                  <ReviewForm
+                    orderId={order._id}
+                    onReviewAdded={() => handleReviewAdded(order._id)}
+                  />
+                ) : (
+                  <button
+                    onClick={() =>
+                      setShowReviewForm({
+                        ...showReviewForm,
+                        [order._id]: true,
+                      })
+                    }
+                    disabled={reviewSubmitted[order._id]}
+                  >
+                    Leave a Review
+                  </button>
+                )
+              ) : null}
             </div>
           ))}
         </ul>
