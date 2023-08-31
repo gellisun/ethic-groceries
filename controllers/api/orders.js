@@ -76,7 +76,6 @@ async function checkout(req, res) {
 async function getPaidOrders(req, res) {
   try {
     const paidOrders = await Order.find({ isPaid: true, user: req.user._id });
-    console.log(paidOrders)
     res.json(paidOrders);
   } catch (err) {
     res.status(500).json(err);

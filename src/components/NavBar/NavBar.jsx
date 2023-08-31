@@ -18,7 +18,7 @@ export default function NavBar({ user, setUser }) {
         </Link>
         &nbsp; | &nbsp;
         <Link className="hyperlink nav-link" to="/reviews">
-          My Reviews
+          Reviews
         </Link>
         &nbsp; | &nbsp;
         <Link className="hyperlink nav-link" to="" onClick={handleLogOut}>

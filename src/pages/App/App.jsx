@@ -10,6 +10,7 @@ import { getUser } from '../../utilities/users-service';
 import OrderHistoryPage from "../OrderHistoryPage/OrderHistoryPage";
 import ProductDetailPage from '../../pages/ProductDetailPage/ProductDetailPage';
 import * as ordersAPI from '../../utilities/orders-api';
+import ReviewList from '../../components/ReviewList/ReviewList';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -39,6 +40,7 @@ export default function App() {
         <Route path="/products/:id" element={<ProductDetailPage />} />
         <Route path="/orders/new" element={<OrderPage order={order} setOrder={setOrder} />} />
         <Route path="/orders" element={<OrderHistoryPage order={order} setOrder={setOrder} />} />
+        <Route path="/reviews" element={<ReviewList user={user} />} />
       </Routes> 
       
       <NavBar user={user} setUser={setUser}/>
