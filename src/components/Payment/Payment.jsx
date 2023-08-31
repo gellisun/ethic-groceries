@@ -26,6 +26,7 @@ export default function Payment(props) {
 
   return (
     <>
+    <img src="/images/app-name.png" alt="app logo" className="app-logo" />
       {stripePromise && clientSecret && (
         <Elements stripe={stripePromise} options={{ clientSecret }}>
           <CheckoutForm />

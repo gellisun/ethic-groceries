@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useStripe, useElements } from '@stripe/react-stripe-js';
 import { PaymentElement } from "@stripe/react-stripe-js";
+import { useNavigate } from "react-router-dom";
 
 export default function CheckoutForm() {
     const stripe = useStripe();
@@ -8,6 +9,8 @@ export default function CheckoutForm() {
 
     const [message, setMessage] = useState(null);
     const [isProcessing, setIsProcessing] = useState(false);
+
+    const navigate = useNavigate();
 
     async function handleSubmitPay(evt) {
         evt.preventDefault();
@@ -28,8 +31,8 @@ export default function CheckoutForm() {
 
             setMessage(error.message);
         } else if (paymentIntent && paymentIntent.status === 'succeeded' ) {
-
             setMessage('Payment status:' + paymentIntent.status);
+            navigate('/orders');
         } else {
             setMessage('Unexpected state');
         }
