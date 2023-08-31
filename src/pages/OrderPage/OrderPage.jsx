@@ -1,6 +1,6 @@
 import LineItem from "../../components/LineItem/LineItem";
 import * as ordersAPI from "../../utilities/orders-api";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 export default function OrderPage({ order, setOrder }) {
   const navigate = useNavigate();
@@ -55,6 +55,7 @@ export default function OrderPage({ order, setOrder }) {
               <span>{order.totalQty}</span>&nbsp;
               <span>${order.orderTotal.toFixed(2)}</span>
             </section>
+            <Link to='/payment'>stripe page</Link>
           </>
         ) : (
           <div>Nothing in your cart</div>
