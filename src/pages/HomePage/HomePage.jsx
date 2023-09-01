@@ -32,17 +32,17 @@ export default function HomePage({ setUser }) {
       <h4>Our partnerships:</h4>
       </div>
       <div className="partnerships-hp">
-      <PiAnchorSimpleBold size="3rem" color="#50716b" />
+      <PiAnchorSimpleBold className="hp-icon" size="6rem" color="#50716b" />
       &nbsp;
-      <PiArmchairBold size="3rem" color="#50716b" />
+      <PiArmchairBold className="hp-icon" size="6rem" color="#50716b" />
       &nbsp;
-      <PiBabyBold size="3rem" color="#50716b" />
+      <PiBabyBold className="hp-icon" size="6rem" color="#50716b" />
       <br />
-      <PiBaseballCapBold size="3rem" color="#50716b" />
+      <PiBaseballCapBold className="hp-icon" size="6rem" color="#50716b" />
       &nbsp;
-      <PiBasketballBold size="3rem" color="#50716b" />
+      <PiBasketballBold className="hp-icon" size="6rem" color="#50716b" />
       &nbsp;
-      <PiBeerBottleBold size="3rem" color="#50716b" />
+      <PiBeerBottleBold className="hp-icon" size="6rem" color="#50716b" />
       <br />
       </div>
       <div className="form-container">

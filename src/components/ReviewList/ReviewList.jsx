@@ -27,7 +27,6 @@ export default function ReviewList({ user }) {
             <div className="review-container" key={review._id}>
               <p>Rating: {review.rating}</p>
               <p>{review.content}</p>
-              <hr />
             </div>
           ))
         ) : (

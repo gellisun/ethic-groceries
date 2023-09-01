@@ -52,13 +52,13 @@ export default function ProductPage({ user, setUser, order, setOrder }) {
           {order && order.lineItems.length > 0 ? (
             <RiShoppingCartFill
               className="cart-icon"
-              size="2rem"
+              size="5rem"
               color="#50716b"
             />
           ) : (
             <RiShoppingCartLine
               className="cart-icon"
-              size="2rem"
+              size="5rem"
               color="#50716b"
             />
           )}

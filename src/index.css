@@ -12,6 +12,7 @@ body {
 .app-logo {
   max-width: 100%;
   border-radius: 1rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
 .homepage-photo {
@@ -98,6 +99,7 @@ nav {
     width: 25%;
     float: right;
     border-radius: 50%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
   }
 
   .homepage-photo {
@@ -177,5 +179,101 @@ nav {
     align-items: center;
     justify-content: center;
     margin: 6rem 0 8rem 0;
+  }
+}
+
+@media only screen and (min-width: 2560px) {
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Quicksand", sans-serif;
+    font-size: 2rem;
+    min-height: 100vh;
+  }
+
+  .app-logo {
+    max-width: 100%;
+    border-radius: 50%;
+    float: left;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+  }
+
+  .homepage-photo {
+    width: 50%;
+  }
+
+  label {
+    margin-top: 0.5rem;
+  }
+
+  input {
+    border: 0.1rem solid lightgrey;
+    border-style: outset;
+    width: 20%;
+    padding: 1rem 0.5rem 1rem 0.5rem;
+    margin-top: 0.5rem;
+    font-size: 2rem;
+  }
+
+  button {
+    font-family: "Quicksand", sans-serif;
+    font-size: 2rem;
+    border: none;
+    color: white;
+    background-color: #e3a0ad;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-top: 0.8rem;
+  }
+
+  .hyperlink {
+    text-decoration: none;
+  }
+
+  .nav-link {
+    color: white;
+    text-decoration: solid;
+  }
+
+  nav {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #50716b;
+    color: white;
+    padding: 0.5rem;
+  }
+
+  .partnerships-hp {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 1rem 0 1rem 0;
+  }
+
+  .hp-icon {
+    margin: 3rem;
+  }
+
+  /* product page */
+  .shop-cart-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* order page */
+  .checkout-btn {
+    margin-bottom: 3rem;
+  }
+
+  .order-refs {
+    padding: 1rem;
   }
 }
