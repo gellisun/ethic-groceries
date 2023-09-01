@@ -46,7 +46,6 @@ export default function App() {
         <Route path="/payment" element={<Payment />} />
         <Route path="/completion" element={<Completion />} />
       </Routes> 
-      
       <NavBar user={user} setUser={setUser}/>
       </>
       : 

@@ -7,6 +7,7 @@ import { PiBabyBold } from "react-icons/pi";
 import { PiBaseballCapBold } from "react-icons/pi";
 import { PiBasketballBold } from "react-icons/pi";
 import { PiBeerBottleBold } from "react-icons/pi";
+import {ImGithub} from 'react-icons/im';
 import './HomePage.css';
 
 export default function HomePage({ setUser }) {
@@ -57,6 +58,7 @@ export default function HomePage({ setUser }) {
         
       )}
       </div>
+      <footer className="footer">Made with &#127758;&#x1F49A; by Angelica Sandrini&nbsp;<a rel="noreferrer" href="https://github.com/gellisun" target="_blank" ><ImGithub /></a></footer>
     </main>
   );
 }

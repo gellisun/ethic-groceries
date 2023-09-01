@@ -44,6 +44,15 @@ button {
   text-decoration: none;
 }
 
+.footer {
+  margin-bottom: 2.5rem;
+}
+
+.footer-link {
+  text-decoration: none;
+  color: #50716b;
+}
+
 .nav-link {
   color: white;
   text-decoration: solid;
