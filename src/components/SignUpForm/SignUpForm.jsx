@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { signUp } from "../../utilities/users-service";
 import { useNavigate } from "react-router-dom";
+import './SignUpForm.css';
 
 export default function SignUpForm(props) {
   const [formData, setFormData] = useState({
@@ -36,7 +37,7 @@ export default function SignUpForm(props) {
   return (
     <div>
       <div className="form-container">
-        <form autoComplete="off" onSubmit={handleSubmit}>
+        <form className="signup-form" autoComplete="off" onSubmit={handleSubmit}>
           <label>Name</label>
           <input
             type="text"

@@ -11,17 +11,11 @@ body {
 
 .app-logo {
   max-width: 100%;
+  border-radius: 1rem;
 }
 
 .homepage-photo {
   max-width: 100%;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 2rem;
 }
 
 label {
@@ -89,18 +83,6 @@ nav {
   padding: 1rem;
 }
 
-/* order history page */
-
-.order-history-list {
-  list-style-type: none;
-  text-align: left;
-  padding: 1rem;
-}
-
-.order-history-li {
-  text-decoration: none;
-}
-
 @media only screen and (min-width: 768px) {
   *,
   *:before,
@@ -113,8 +95,9 @@ nav {
   }
 
   .app-logo {
-    width: 30%;
+    width: 25%;
     float: right;
+    border-radius: 50%;
   }
 
   .homepage-photo {
@@ -167,7 +150,32 @@ nav {
 
   /* product page */
   .shop-cart-container {
-    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     justify-content: center;
+    margin: 1em 0 4.5rem 0;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  /* product page */
+  .shop-cart-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 2.5em 1rem 6.5rem 0;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  /* product page */
+  .shop-cart-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 6rem 0 8rem 0;
   }
 }

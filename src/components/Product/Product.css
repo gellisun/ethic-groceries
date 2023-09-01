@@ -7,13 +7,13 @@
 }
 
 .grocery-item-img {
-  width: 6rem;
+  width: 7rem;
+  height: 5rem;
 }
 
 .product-name {
   color: #50716b;
 }
-
 
 @media only screen and (min-width: 768px) {
   .product-price {
@@ -24,7 +24,7 @@
     margin-left: 0.5rem;
   }
   .grocery-item-img {
-    width: 10rem;
+    width: 9rem;
+    height: 7rem;
   }
-
 }

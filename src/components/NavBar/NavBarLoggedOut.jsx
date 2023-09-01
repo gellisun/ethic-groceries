@@ -4,11 +4,11 @@ export default function NavBarLoggedOut() {
   return (
     <nav className="navbar-container">
       <>
-        <Link className="hyperlink" to="/our-products">Our Products</Link>
+        <Link className="hyperlink nav-link" to="/our-products">Our Products</Link>
         &nbsp; | &nbsp;
-        <Link className="hyperlink" to="/reviews">Reviews</Link>
+        <Link className="hyperlink nav-link" to="/reviews">Reviews</Link>
         &nbsp; | &nbsp;
-        <Link className="hyperlink" to="/contact">Contact Us</Link>
+        <Link className="hyperlink nav-link" to="/contact">Contact Us</Link>
       </>
     </nav>
   );

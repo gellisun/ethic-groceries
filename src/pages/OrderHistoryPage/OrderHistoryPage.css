@@ -1,0 +1,26 @@
+.order-history-list {
+  list-style-type: none;
+  text-align: left;
+  padding: 1rem;
+  background-color: #ecf9f6;
+  border-radius: 1rem;
+}
+
+.order-history-li {
+  text-decoration: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .order-history-list {
+    list-style-type: none;
+    text-align: left;
+    padding: 1rem;
+    margin-top: 4rem;
+    background-color: #ecf9f6;
+    border-radius: 0.5% 60% 0.5% 0.5%;
+  }
+
+  .order-history-li {
+    text-decoration: none;
+  }
+}

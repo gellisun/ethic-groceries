@@ -1,6 +1,7 @@
 import LineItem from "../../components/LineItem/LineItem";
 import * as ordersAPI from "../../utilities/orders-api";
 import { useNavigate } from "react-router-dom";
+import "./OrderPage.css";
 
 export default function OrderPage({ order, setOrder }) {
   const navigate = useNavigate();
@@ -21,7 +22,7 @@ export default function OrderPage({ order, setOrder }) {
     try {
       const checkedOutOrder = await ordersAPI.checkout();
       setOrder(checkedOutOrder);
-      navigate('/payment');
+      navigate("/payment");
     } catch (err) {
       console.error(err);
     }
@@ -36,30 +37,33 @@ export default function OrderPage({ order, setOrder }) {
       key={item._id}
     />
   ));
-  
+
   return (
     <div>
       <img src="/images/app-name.png" alt="app logo" className="app-logo" />
       <div>
         <h1 className="new-order-h1">NEW ORDER</h1>
       </div>
-      <div className="cart-container">
-        {lineItems.length ? (
-          <>
-            {lineItems}
-            <section>
-              <button className="checkout-btn" onClick={handleCheckout} disabled={!lineItems.length}>
-                Checkout
-              </button>
-              &nbsp;
-              <span>{order.totalQty}</span>&nbsp;
-              <span>${order.orderTotal.toFixed(2)}</span>
-            </section>
-          </>
-        ) : (
-          <div>Nothing in your cart</div>
-        )}
-      </div>
+
+      {lineItems.length ? (
+        <>
+          <div className="cart-container">{lineItems}</div>
+          <section>
+            <button
+              className="checkout-btn"
+              onClick={handleCheckout}
+              disabled={!lineItems.length}
+            >
+              Checkout
+            </button>
+            &nbsp;
+            <span>{order.totalQty}</span>&nbsp;
+            <span>${order.orderTotal.toFixed(2)}</span>
+          </section>
+        </>
+      ) : (
+        <div>Nothing in your cart</div>
+      )}
     </div>
   );
 }

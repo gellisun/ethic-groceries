@@ -1,6 +1,7 @@
 import * as ordersAPI from "../../utilities/orders-api";
 import { useEffect, useState } from "react";
 import ReviewForm from "../../components/ReviewForm/ReviewForm";
+import './OrderHistoryPage.css';
 
 export default function OrderHistoryPage({ user, order, setOrder }) {
   const [pastOrders, setPastOrders] = useState([]);
@@ -27,7 +28,7 @@ export default function OrderHistoryPage({ user, order, setOrder }) {
   return (
     <>
       <img src="/images/app-name.png" alt="app logo" className="app-logo" />
-      <h1>PREVIOUS ORDERS</h1>
+      <h1 className="h1-ohp">PREVIOUS ORDERS</h1>
       {pastOrders.length > 0 ? (
         <ul className="order-history-list">
           {pastOrders.map((order) => (
@@ -63,7 +64,7 @@ export default function OrderHistoryPage({ user, order, setOrder }) {
           ))}
         </ul>
       ) : (
-        <p>No previous orders available.</p>
+        <div>No previous orders available.</div>
       )}
     </>
   );

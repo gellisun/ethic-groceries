@@ -1,0 +1,19 @@
+.payment-form {
+  margin: 2rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .body {
+    background-color: #A0E3D6;
+  }
+
+  .payment-form {
+    margin: 5rem 3rem 3rem 3rem;
+  }
+
+  .form-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

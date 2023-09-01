@@ -7,5 +7,14 @@
   .ProductList {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-top: 2rem;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .ProductList {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    margin-top: 2rem;
   }
 }

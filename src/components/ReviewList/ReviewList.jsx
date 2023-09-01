@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import * as reviewsAPI from "../../utilities/reviews-api";
+import "./ReviewList.css";
 
 export default function ReviewList({ user }) {
   const [reviews, setReviews] = useState([]);
@@ -19,15 +20,19 @@ export default function ReviewList({ user }) {
   return (
     <>
       <img src="/images/app-name.png" alt="app logo" className="app-logo" />
+      <h1>YOUR REVIEWS</h1>
       <div className="ReviewList">
-        <h1>YOUR REVIEWS</h1>
-        {reviews.map((review) => (
-          <div key={review._id}>
-            <p>Rating: {review.rating}</p>
-            <p>{review.content}</p>
-            <hr />
-          </div>
-        ))}
+      {reviews.length > 0 ? (
+          reviews.map((review) => (
+            <div className="review-container" key={review._id}>
+              <p>Rating: {review.rating}</p>
+              <p>{review.content}</p>
+              <hr />
+            </div>
+          ))
+        ) : (
+          <div>No reviews yet.</div>
+        )}
       </div>
     </>
   );

@@ -1,0 +1,13 @@
+.review-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .review-label {
+    margin-right: 1rem;
+  }
+
+  .review-input {
+    margin-top: 1rem;
+  }
