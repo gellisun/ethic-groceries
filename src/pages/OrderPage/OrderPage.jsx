@@ -20,8 +20,8 @@ export default function OrderPage({ order, setOrder }) {
   }
   async function handleCheckout() {
     try {
-      const checkedOutOrder = await ordersAPI.checkout();
-      setOrder(checkedOutOrder);
+      await ordersAPI.checkout();
+      setOrder(null);
       navigate("/payment");
     } catch (err) {
       console.error(err);
