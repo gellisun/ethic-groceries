@@ -178,6 +178,18 @@ nav {
     justify-content: center;
     margin: 2.5em 1rem 6.5rem 0;
   }
+
+  button {
+    cursor: pointer;
+  }
+
+  nav {
+    cursor: pointer;
+  }
+
+  .cart-icon {
+    cursor: pointer;
+  }
 }
 
 @media only screen and (min-width: 1440px) {
