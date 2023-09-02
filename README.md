@@ -10,10 +10,10 @@ In order to test it you would have to sign up as the informative pages do not ha
 	<code><img width="30" src="https://raw.githubusercontent.com/tomchen/stack-icons/master/logos/html-5.svg" alt="HTML" title="HTML"/></code>
 	<code><img width="30" src="https://raw.githubusercontent.com/tomchen/stack-icons/master/logos/css-3.svg" alt="CSS" title="CSS"/></code>
 	<code><img width="40" src="https://raw.githubusercontent.com/tomchen/stack-icons/master/logos/javascript.svg" alt="JavaScript" title="JavaScript"/></code>
-	<code><img width="30" src="https://raw.githubusercontent.com/get-icon/geticon/master/icons/mongodb-icon.svg" alt="mongoDB" title="mongoDB"/></code>
-	<code><img width="30" src="https://raw.githubusercontent.com/get-icon/geticon/master/icons/express.svg" alt="Express" title="Express"/></code>
+	<code><img width="20" src="https://raw.githubusercontent.com/get-icon/geticon/master/icons/mongodb-icon.svg" alt="mongoDB" title="mongoDB"/></code>
+	<code><img width="50" src="https://raw.githubusercontent.com/get-icon/geticon/master/icons/express.svg" alt="Express" title="Express"/></code>
 	<code><img width="40" src="https://user-images.githubusercontent.com/25181517/183897015-94a058a6-b86e-4e42-a37f-bf92061753e5.png" alt="React" title="React"/></code>
-	<code><img width="30" src="https://raw.githubusercontent.com/get-icon/geticon/master/icons/nodejs.svg" alt="Node.js" title="Node.js"/></code>
+	<code><img width="50" src="https://raw.githubusercontent.com/get-icon/geticon/master/icons/nodejs.svg" alt="Node.js" title="Node.js"/></code>
 </div><br>
 <div align="left">
 	<code><img width="80" src="https://raw.githubusercontent.com/tomchen/stack-icons/master/logos/git.svg" alt="Git" title="Git"/></code>
@@ -359,9 +359,10 @@ The challenges mainly involved React. Especially at the beginning, it was hard t
 While I had fun with the UI in conditionally display components, it was hard to retrieve the data correctly from the database and display exactly what I wanted to retrieve.
 
 ## Wins
-Planning: for the first time during the course I had very specific ideas on what I wanted to achieve, this definitely helped in achieving them.
-Features: I managed to go past the MVP and that is a pretty good win for me.
-CSS: finally thinking mobile-first while creating the application, something I struggled with in the past units.
+
+ - Planning: for the first time during the course I had very specific ideas on what I wanted to achieve, this definitely helped in achieving them.
+ - Features: I managed to go past the MVP and that is a pretty good win for me.
+ - CSS: finally thinking mobile-first while creating the application, something I struggled with in the past units.
 
 ## Key Learnings
 I learnt the importance of giving better naming to variables. I caused to myself quite a bit of confusion by naming the state variable 'order' in the frontend and 'cart' in the back-end, for example.
