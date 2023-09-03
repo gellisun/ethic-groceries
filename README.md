@@ -4,6 +4,13 @@ This is the last project I created during the Software Engineering Immersive cou
 
 Here's the link to play with [Ethic Groceries](https://ethic-groceries-0cb390d68696.herokuapp.com/).
 In order to test it you would have to sign up as the informative pages do not have any information at the moment.
+
+![Ethic Groceries](/public/images/final1.png "Ethic Groceries")
+![](/public/images/final2.png "Ethic Groceries")
+![](/public/images/final3.png "Ethic Groceries")
+![](/public/images/final4.png "Ethic Groceries")
+![](/public/images/final5.png "Ethic Groceries")
+
 ## Technology Used
 
 <div align="left">
@@ -36,7 +43,7 @@ In order to test it you would have to sign up as the informative pages do not ha
 
 I took this opportunity to put together my love and concern for planet Earth and the passion I have grown for programming.
 
-![Trello](/public/images/trello.png "Trello board")
+![Trello Board](/public/images/trello.png "Trello board")
 ### Wireframe
 ![Mobile](/public/images/Homepage.png "HomePage")
 ![](/public/images/Signup.png "SignUp")
