@@ -3,7 +3,7 @@
 This is the last project I created during the Software Engineering Immersive course at General Assembly, when I was requested to builda full-stack application with MERN tech stack.
 
 Here's the link to play with [Ethic Groceries](https://ethic-groceries-0cb390d68696.herokuapp.com/).
-In order to test it you would have to sign up as the informative pages do not have any information at the moment.
+In order to test it you would have to sign up as the informative pages do not have any content at the moment.
 ## Technology Used
 
 <div align="left">
